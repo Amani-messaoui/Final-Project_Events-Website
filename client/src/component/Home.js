@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import M from "materialize-css";
 import eventClosing from "../outils/eventClosing";
 import { closeEvent, getEvent, endEvent } from "../actions/evntAction";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { GET_ERRORS } from "../actions/types";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import "../bootstrap.scss"
@@ -161,21 +161,21 @@ function Home() {
           <img src="festival_home.jpg" alt="Home" className="responsive-img" />
         </div> */}
       </div>
-      <div class="more-about-us">
-        <div class="container">
-            <div class="col-md-5 col-md-offset-8">
-                <div class="content">
+      <div className="more-about-us">
+        <div className="container" style={{minHeight: "100vh"}}>
+            <div className="col-md-5 col-md-offset-8">
+                <div className="content">
                 <h2 className="header">COCO Event</h2>
                     <span className="span-home"># BLACK LIVES MATTER</span>
                     <p className="p-home">Welcome to the number 1 event website in the WORLD <br /> We
             consider our self as a family, and as a family we welcome you to be
             part of our universe. 
                     <br/></p>
-                    <div class="simple-btn">
-                        <a className="a-home" href="#" style={{textDecoration: "none",color: "#fff"
+                    <div className="simple-btn">
+                        <Link className="a-home" to="/events" style={{textDecoration: "none",color: "#fff"
 
-}}>You can check our last available events here below.
-</a>
+}}>You can check our last available events here {"->"}
+</Link>
                     </div>
                 </div>
             </div>

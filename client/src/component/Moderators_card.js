@@ -65,21 +65,21 @@ const Moderators_card = ({ users }) => {
             .map((el) => {
               return (
                 <div
-                  className="col s4 m6 l4 xl3"
+                  className="col s6 xl3"
                   key={el._id}
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
                     overflow: "hidden",
-                    minWidth: "335px"
+                minWidth:315
                   }}
                 >
                   <div
                     className="card small sticky-action"
                     style={{
                       overflow: "hidden",
-                      width: 330,
+                      width: 315,
                       height: 440}}
                   >
                     <div
@@ -103,13 +103,13 @@ const Moderators_card = ({ users }) => {
                       {el.online&&<div style={{
                               position:"absolute",
                               background:"green",
-                              right:310,
+                              right:290,
                               bottom:417,
                               borderRadius:"50%",
                               width:10,
                               height:10
                             }}><span style={{ position:"relative",right:-11,
-                            bottom:7, color:"green", fontSize:11}}>Online</span></div>
+                            bottom:6, color:"green", fontSize:11}}>Online</span></div>
                             }
                     </div>
                     <div style={{marginBottom:"5px"}}>

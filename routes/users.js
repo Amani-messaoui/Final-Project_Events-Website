@@ -9,8 +9,8 @@ const validateLoginInput = require("../validation/login");
 const validateUpdateInput = require("../validation/update");
 const authMiddleware = require("../middleware/authMiddleware");
 // const nodemailer = require('nodemailer');
-// const sgTransport = require('nodemailer-sendgrid-transport');
-const uuidv1 = require('uuid/v1');
+const sgTransport = require('nodemailer-sendgrid-transport');
+const uuidv1 = require('uuid');
 const { createUser, getUser, updateUser } = require("../models/email");
 const { getResetRequest, createResetRequest } = require("../models/resetRequests");
 const sendResetLink = require("./sendEmail");
@@ -66,7 +66,7 @@ router.post("/register", (req, res) => {
         // subject:"signup success",
         // html:"<h1>wrlcome to CocoEvent</h1>"
         // })
-        res.json(user)})
+        // res.json(user)})
           const payload = {
             id: user.id,
             fname: user.fname,
@@ -92,7 +92,7 @@ router.post("/register", (req, res) => {
           })
       
       let mailOptions={
-        from: "eventcoco63@gmail.com",
+        from: "mailer.cocoevent@gmail.com",
         to: `${user.fname}<${user.email}>`,
         subject: `Activating your account - Coco event`,
         html: `Welcome <b>${user.fname}</b>, your Coco event account has been created. <br/>
@@ -107,7 +107,7 @@ router.post("/register", (req, res) => {
         res.json({msg:info.response});
     })
           
-        
+  })
           })
         
         

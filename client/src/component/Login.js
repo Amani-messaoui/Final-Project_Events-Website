@@ -7,6 +7,8 @@ import Navbar from "./Navbar";
 import { logoutUser } from "../actions/authaction";
 import eventClosing from "../outils/eventClosing";
 import M from "materialize-css";
+import ForgotPassword from "./ForgotPassword";
+
 
 function Login({ history }) {
   const errors = useSelector((state) => state.errors);
@@ -192,21 +194,30 @@ dispatch({
                   width: "150px",
                   borderRadius: "3px",
                   letterSpacing: "1.5px",
-                  marginTop: "1rem",
+                  marginBottom: "1rem",
                   height: "45px",
                 }}
                 type="submit"
                 className="btn  hoverable"
               >
                 Login
-              </button>
-              <Link to="/forgot">Forgot Password</Link>
-              <Link to="/register">Create Account</Link>
+              </button> </div>
+              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+              <a href="#forgot"  className="modal-trigger" datatarget="forgot" datatoggle="modal" style={{color:"gray",paddingTop:"10px", fontSize:"13px",}}>Forgot Password?</a>
             </div>
+           
           </form>
         </div>
       </div>
-    </div>
+    
+ </div> 
+ <div
+          id="forgot"
+          className="modal"
+          style={{ marginTop: "20px" }}
+        >
+          <ForgotPassword />
+        </div>
     </>
   );
 }
